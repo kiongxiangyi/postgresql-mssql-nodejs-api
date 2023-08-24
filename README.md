@@ -31,7 +31,7 @@
 [Artificial Intelligence Controlled Milling (AICoM)](https://lernendewerkzeugmaschine.de/)
 
 Gühring is one of the partners in the AICoM project. The role is to maintain the data in database.
-There will be new serial numbers created in PostgreSQL. The API is created to search for the new serial numbers that are not exists in MS SQL DB and create a new data record of the serial number in MS SQL DB.
+There will be new serial numbers created in a PostgreSQL. This API is created to search for the new serial numbers that are not exists in a MS SQL DB and create a new data record of the serial number in the MS SQL DB.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -48,7 +48,7 @@ There will be new serial numbers created in PostgreSQL. The API is created to se
 ## Usage
 
 <ul>
-  <li>The API will run automatically in Task Scheduler to check for new serial numbers in PostgreSQL and create new data records automatically in MS SQL DB.</li>
+  <li>The API will run automatically in Task Scheduler to check for new serial numbers in PostgreSQL and create new data records for the new serial numbers automatically in MS SQL DB.</li>
 </ul>
 
 ## Test
