@@ -11,7 +11,7 @@ const swaggerOption = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Gühring API for postgresql",
+      title: "Gühring API for PostgreSQL",
       version: "1.0.0",
       description:
         "This is a GET API made with Express and documented with Swagger",
@@ -30,7 +30,7 @@ const swaggerOption = {
       },
     ],
   },
-  apis: ["./routes/*.js"],
+  apis: ["./routes/mssql/*.js", "./routes/postgres/*.js"],
 };
 
 const specs = swaggerJsDoc(swaggerOption);

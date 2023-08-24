@@ -8,16 +8,16 @@ const Serialnummern = require("../../models/mssql/Serialnummern");
 /**
  * @swagger
  * tags:
- *    name: Serialnummer
- *    description: Access to serial number
+ *    name: Proj
+ *    description: Table Proj in PostgreSQL
  */
 
 /**
  * @swagger
- * /Serialnummer:
+ * /Proj:
  *    get:
- *      summary: Find all serial number
- *      tags: [Serialnummer]
+ *      summary: Find all the new inserted serial numbers
+ *      tags: [Proj]
  *      responses:
  *       200:
  *        description: successful operation

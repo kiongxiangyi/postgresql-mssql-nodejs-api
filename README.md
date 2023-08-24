@@ -31,7 +31,7 @@
 [Artificial Intelligence Controlled Milling (AICoM)](https://lernendewerkzeugmaschine.de/)
 
 Gühring is one of the partners in the AICoM project. The role is to maintain the data in database.
-The other project's partners will store new files on the file system and this API is created for them to store the details of the files in DB.
+There will be new serial numbers created in PostgreSQL. The API is created to search for the new serial numbers that are not exists in MS SQL DB and create a new data record of the serial number in MS SQL DB.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -47,35 +47,29 @@ The other project's partners will store new files on the file system and this AP
 
 ## Usage
 
-Submit a HTTP POST request.
-Please refer to the [Documentation](http://localhost:8000/api-docs/).
+<ul>
+  <li>The API will run automatically in Task Scheduler to check for new serial numbers in PostgreSQL and create new data records automatically in MS SQL DB.</li>
+</ul>
+
+## Test
+
+Please refer to the [Documentation](http://localhost:8004/api-docs/).
 
 ### Example:
 
-POST request using fetch with async/await:
+GET request using fetch with async/await:
 
 ```js
-const saveData = async () => {
+const getData = async () => {
   try {
-    await fetch(
-      `http://localhost:8000/ArtikelDokumente?Stueckliste=T1000&Dokumentpfad=C%3A%5Cowncloud.log`,
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title: "React POST Request Example" }),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    const response = await fetch(`http://localhost:8004/Prog`);
+    const results = await response.json();
+    console.log(results);
   } catch (err) {
     console.log(err);
   }
 };
-saveData();
+getData();
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
