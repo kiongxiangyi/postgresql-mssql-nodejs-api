@@ -1,7 +1,7 @@
-<h3 align="center">Database API for Module Works</h3>
+<h3 align="center">API to read and write data from different databases</h3>
 
   <p align="center">
-    Return JSON Response From Web Service API FROM Microsoft SQL Server
+    Read and filter data from PostgreSQL and write into Microsoft SQL Server database
     <br />
     <a href="https://github.com/kiongxiangyi/modulework-nodejs-sequelise-api"><strong>Explore the docs »</strong></a>
     <br />
@@ -28,9 +28,10 @@
 
 ## About The Project
 
-[Artificial Intelligence Controlled Milling (AICoM)](https://www.moduleworks.com/aicom/)
+[Artificial Intelligence Controlled Milling (AICoM)](https://lernendewerkzeugmaschine.de/)
 
-Gühring is the partner for Module Works. Gühring create this api for Module Works to read the data from the AICoM database.
+Gühring is one of the partners in the AICoM project. The role is to maintain the data in database.
+The other project's partners will store new files on the file system and this API is created for them to store the details of the files in DB.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -39,7 +40,6 @@ Gühring is the partner for Module Works. Gühring create this api for Module Wo
 - <a href="https://nodejs.org/en"><strong>Node.js</strong></a>
 - <a href="https://expressjs.com/en/"><strong>Express.js</strong></a>
 - <a href="https://sequelize.org/"><strong>Sequelize</strong></a>
-- <a href="https://swagger.io/"><strong>Swagger</strong></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -47,7 +47,36 @@ Gühring is the partner for Module Works. Gühring create this api for Module Wo
 
 ## Usage
 
-Please refer to the [Documentation](https://localhost:8004/api-docs/).
+Submit a HTTP POST request.
+Please refer to the [Documentation](http://localhost:8000/api-docs/).
+
+### Example:
+
+POST request using fetch with async/await:
+
+```js
+const saveData = async () => {
+  try {
+    await fetch(
+      `http://localhost:8000/ArtikelDokumente?Stueckliste=T1000&Dokumentpfad=C%3A%5Cowncloud.log`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: "React POST Request Example" }),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  } catch (err) {
+    console.log(err);
+  }
+};
+saveData();
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -55,9 +84,9 @@ Please refer to the [Documentation](https://localhost:8004/api-docs/).
 
 ## Contact
 
-Xiang Yi Kiong - kiongxiangyi@gmail.com - <a href="https://www.linkedin.com/in/kiongxiangyi/"><strong>Linkedin</strong></a>
+Xiang Yi Kiong - xiangyi.kiong@guehring.de
 
-Project Link: [https://github.com/kiongxiangyi/modulework-nodejs-sequelise-api](https://github.com/kiongxiangyi/modulework-nodejs-sequelise-api)
+Project Link: [https://github.com/kiongxiangyi/dateisystem-nodejs-api](https://github.com/kiongxiangyi/dateisystem-nodejs-api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,12 +94,7 @@ Project Link: [https://github.com/kiongxiangyi/modulework-nodejs-sequelise-api](
 
 ## Acknowledgments
 
-- [HTTPS](https://nodejs.org/api/https.html)
-- [Enable HTTPS for Localhost During Local Development in Node.js](https://javascript.plainenglish.io/enable-https-for-localhost-during-local-development-in-node-js-96204453d72b)
-- [Installing a node.js application as a Windows service](https://eysermans.com/post/installing-a-node-application-as-a-windows-service)
-- [Node.js: Install .js project as a Service | Windows Tutorial](https://www.youtube.com/watch?v=1smy9yyme1Y)
 - [Swagger Petstore](https://petstore.swagger.io/#/pet/findPetsByStatus)
 - [NodeJS Swagger API Documentation Tutorial Using Swagger JSDoc](https://www.youtube.com/watch?v=S8kmHtQeflo&t=444s)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-# postgresql-mssql-nodejs-api
